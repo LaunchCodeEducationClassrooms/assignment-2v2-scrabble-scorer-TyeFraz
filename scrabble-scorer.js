@@ -98,20 +98,26 @@ function scrabbleScore(word){
   return scrabbleScore;
 };
 
+const objectZero={ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: 'A function with a parameter for user input that returns a score.'};
+const objectOne={name:'Bonus Vowels', description:'Vowels are 3 pts, consonants are 1 pt.',scoringFunction: 'A function that returns a score based on the number of vowels and consonants.'};
 
-const scoringAlgorithms ={ name: [ 'Simple Score', 'Bonus Vowels', 'Scrabble' ], description: [ 'Each letter is worth 1 point.', 'Vowels are 3 pts, consonants are 1 pt.', 'The traditional scoring algorithm.' ], scoringFunction: [ 'A function with a parameter for user input that returns a score.', 'A function that returns a score based on the number of vowels and consonants.', 'Uses the oldScrabbleScorer() function to determine the score for a given word.' ]
-  };
+const objectTwo={name:'Scrabble',description: 'The traditional scoring algorithm.',scoringFunction:'Uses the oldScrabbleScorer() function to determine the score for a given word.' }
+
+const scoringAlgorithms =[objectZero,objectOne,objectTwo] ;
+  
 
 function scorerPrompt(word) {
 let scorerPrompt=input.question("Which scoring algorithm would you like to use?\n \n0 - Simple: One point per character\n1 - Vowel Bonus: Vowels are worth 3 points\n2 - Scrabble: Uses scrabble point system\n\nEnter 0, 1, or 2:")
 if (scorerPrompt==="2"){
-   console.log("algorithm name: ", scoringAlgorithms.name[2]);
+   console.log("algorithm name: ", scoringAlgorithms[2].name);
 console.log("scorerFunction result: ", scrabbleScore(word))
 }if (scorerPrompt==="0"){
-  console.log("algorithm name: ", scoringAlgorithms.name[0]);
+  console.log("algorithm name: ", scoringAlgorithms[0].name);
 console.log("scorerFunction result: ", simpleScore(word))
-}if(scorerPrompt==="1") {console.log("algorithm name: ", scoringAlgorithms.name[1]);
-console.log("scorerFunction result: ", vowelBonusScore(word))};
+}if(scorerPrompt==="1") {console.log("algorithm name: ", scoringAlgorithms[1].name);
+console.log("scorerFunction result: ", vowelBonusScore(word))
+};
+
 };
 
 

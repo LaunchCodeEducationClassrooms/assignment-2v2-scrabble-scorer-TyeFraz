@@ -2,6 +2,8 @@
 
 const input = require("readline-sync");
 
+let word=("")
+
 const oldPointStructure = {
   1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
   2: ['D', 'G'],
@@ -98,10 +100,10 @@ function scrabbleScore(word){
   return scrabbleScore;
 };
 
-const objectZero={ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore()};
-const objectOne={name:'Bonus Vowels', description:'Vowels are 3 pts, consonants are 1 pt.',scoringFunction: vowelBonusScore()};
+const objectZero={ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word)};
+const objectOne={name:'Bonus Vowels', description:'Vowels are 3 pts, consonants are 1 pt.',scoringFunction: vowelBonusScore(word)};
 
-const objectTwo={name:'Scrabble',description: 'The traditional scoring algorithm.',scoringFunction:oldScrabbleScorer()}
+const objectTwo={name:'Scrabble',description: 'The traditional scoring algorithm.',scoringFunction:oldScrabbleScorer(word)}
 
 const scoringAlgorithms =[objectZero,objectOne,objectTwo] ;
   

@@ -99,7 +99,7 @@ function scrabbleScore(word){
 };
 
 
-const scoringAlgorithms ={ name: [ 'Simple Score', 'Bonus Vowels', 'Scrabble' ], description: [ 'Each letter is worth 1 point.', 'Vowels are 3 pts, consonants are 1 pt.', 'The traditional scoring algorithm.' ], Function: [ 'A function with a parameter for user input that returns a score.', 'A function that returns a score based on the number of vowels and consonants.', 'Uses the oldScrabbleScorer() function to determine the score for a given word.' ]
+const scoringAlgorithms ={ name: [ 'Simple Score', 'Bonus Vowels', 'Scrabble' ], description: [ 'Each letter is worth 1 point.', 'Vowels are 3 pts, consonants are 1 pt.', 'The traditional scoring algorithm.' ], scoringFunction: [ 'A function with a parameter for user input that returns a score.', 'A function that returns a score based on the number of vowels and consonants.', 'Uses the oldScrabbleScorer() function to determine the score for a given word.' ]
   };
 
 function scorerPrompt(word) {

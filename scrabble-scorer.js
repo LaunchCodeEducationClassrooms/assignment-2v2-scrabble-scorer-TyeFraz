@@ -101,11 +101,13 @@ function scrabbleScore(word){
 };
 
 const objectZero={ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word)};
+
 const objectOne={name:'Bonus Vowels', description:'Vowels are 3 pts, consonants are 1 pt.',scoringFunction: vowelBonusScore(word)};
 
 const objectTwo={name:'Scrabble',description: 'The traditional scoring algorithm.',scoringFunction:oldScrabbleScorer(word)}
 
-const scoringAlgorithms =[objectZero,objectOne,objectTwo] ;
+
+const scoringAlgorithms =[ Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: simpleScore(word) }), Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: vowelBonusScore(word) }), Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction: oldScrabbleScorer(word) }) ] ;
   
 
 function scorerPrompt(word) {

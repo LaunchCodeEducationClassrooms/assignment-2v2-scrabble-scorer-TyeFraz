@@ -76,19 +76,23 @@ word = word.toUpperCase();
  }
 function scrabbleScore(word){
   word = word.toLowerCase();
-	let scrabbleScore = "";
- 
+	let scrabbleScore = 0;
+ let scrabbleScoreString=""
 	for (let i = 0; i < word.length; i++) {
  
 	  for (item in newPointStructure) {
         
 		 if(item===(word[i])) {
        
-			scrabbleScore += `Points for '${word[i]}': ${newPointStructure[item]}\n`
+			scrabbleScoreString += `Points for '${word[i]}': ${newPointStructure[item]}\n`;
+      scrabbleScore+= newPointStructure[item]
+      
 		 }
  
 	  }
-  }console.log(scrabbleScore)
+  }console.log(`${scrabbleScoreString } \nscore for ${word}: ${scrabbleScore}`)
+  
+
   return scrabbleScore;
 };
 

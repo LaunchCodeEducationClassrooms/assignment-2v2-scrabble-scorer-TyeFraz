@@ -102,7 +102,7 @@ function scrabbleScore(word){
 
 
 
-const scoringAlgorithms =[ Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: 'Function'}), Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: 'Function' }), Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction: 'Function)' }) ] ;
+const scoringAlgorithms =[ Object({ name: 'Simple Score', description: 'Each letter is worth 1 point.', scoringFunction: 'Function'}), Object({ name: 'Bonus Vowels', description: 'Vowels are 3 pts, consonants are 1 pt.', scoringFunction: 'Function' }), Object({ name: 'Scrabble', description: 'The traditional scoring algorithm.', scoringFunction: 'Function' }) ] ;
   
 
 function scorerPrompt(word) {
